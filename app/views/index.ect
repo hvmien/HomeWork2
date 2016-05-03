@@ -1,12 +1,11 @@
 <% extend '../app/views/layouts/main.ect' %>
 <div>
 	<h1><%- @title %></h1>
-	<% if @isLoggedIn :%>
-
-				<label>Login successful!</label>
-
-	<% else : %>
+	<% if @session.isLoggedIn :%>
+		<%%>
+	<%else :%>
 
 	<%end%>
+	
 </div>
 

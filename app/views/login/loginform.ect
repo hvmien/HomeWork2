@@ -2,11 +2,15 @@
 
 	<div class="login">
 		<div class="login-screen">
-		<form method="post" action="/login" enctype='application/x-www-form-urlencoded'>
+		<form method="post" action="/user/login" enctype='application/x-www-form-urlencoded'>
 			<div class="app-title">
 				<h1>Login</h1>
 			</div>
 			
+				<% if - @invalid:%>
+					<p> Login fail!</p>
+				<%else :%>
+
 				<div class="login-form" >
 
 					<div class="control-group">
@@ -21,7 +25,7 @@
 					<a ><input class="btn btn-primary btn-large btn-block"  type="submit" value="Login"></a>
 					<a class="login-link" href="#">Lost your password?</a>
 				</div>
-					
+				<%end%>
 		</form>	
 		</div>
 

@@ -1,17 +1,21 @@
 var express = require('express');
+var http = require('http'),
+    fs = require('fs');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var bodyParser = require("body-parser");
 
 module.exports = function(app){
-	console.log('sdfhasgd');
+
 	app.use(express.static('public'));
-	app.use(express.logger('dev'));
-	app.use(express.cookieParser());
-	app.use(express.session({secret: 'building a blog'}));
-	app.use(express.bodyParser());
+	app.use(cookieParser());
+	app.use(session({secret: 'building a webchat'}));
+	app.use(bodyParser());
 
 	app.use(function(req,res,next){
 		
-		console.log('mien');
-	   	req.locals.isLoggedIn = req.session.isLoggedIn;	    
+		console.log('set session loggedin');
+	   	res.locals.session = req.session;	    
 	next();
 	});
 }
