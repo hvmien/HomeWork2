@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- @title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+    <body>
+        <nav class="navbar bg-faded navbar-fixed-top">
+          <a class="navbar-brand" >Chat Message</a>
+
+          <ul class="nav navbar-nav pull-xs-right" >
+          <% if @isLoggedIn :%>
+
+           <li class="nav-item">
+              <a class="nav-link" href="/">Logout</a></li>
+            
+            <%else :%>
+          
+              <li class="nav-item active">
+              <a class="nav-link" href="login">Log In <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup">Sign Up</a>
+            </li>
+           
+            <%end%>
+          </ul>
+
+        </nav>
+
+        <% content %>
+
+    </body>
+</html>
