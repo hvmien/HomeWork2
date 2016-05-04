@@ -508,9 +508,14 @@ ul.inbox-pagination li {
     border: 1px solid #e6e6e6;
     box-shadow: none;
 }
+.modal-body{
+  height: 500px;
+}
 .btn-send, .btn-send:hover {
     background: none repeat scroll 0 0 #00a8b3;
     color: #fff;
+    width: 100px;
+    float: right;
 }
 .btn-send:hover {
     background: none repeat scroll 0 0 #009da7;
@@ -518,6 +523,12 @@ ul.inbox-pagination li {
 .modal-header h4.modal-title {
     font-family: "Open Sans",sans-serif;
     font-weight: 300;
+}
+.modal-header{
+
+}
+.btncompose{
+  width: 30px;
 }
 .modal-body label {
     font-family: "Open Sans",sans-serif;
@@ -650,4 +661,22 @@ ul {
 }
 .btnchangbiet{
   width: 75px
+}
+.inputnewmes{
+  text-align: left;
+  
+}
+input[type="text1"] {
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.newmess {
+  height: 440px;
 }
