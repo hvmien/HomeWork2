@@ -110,6 +110,7 @@ module.exports = function(app){
 			console.log('---3 succesfully----')
 			req.session.isLoggedIn = true;
 			req.session.user = email;
+			req.session.name = 'NameUser';
 			res.redirect('/user/message');
 		})
 		function invalid(){

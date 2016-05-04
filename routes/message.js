@@ -6,13 +6,17 @@ var express = require('express');
 var connectJade   = require('../middleware/index.js');
 var User = mongoose.model('User');
 var ect = require('ect');
+var http = require('http')
+  , fs = require('fs');
 
 
 module.exports = function(app){
 
 	app.get('/user/message', function(req,res){
-		
-		res.render('../app/views/index.ect',{isLoggedIn:true});
+		console.log(req.session.user);
+		res.render('../app/views/message/mes.ect',{tilogin:req.session.user});
 	});
+
+
 
 }

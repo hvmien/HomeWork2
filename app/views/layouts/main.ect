@@ -10,16 +10,20 @@
 
   </head>
     <body>
-      <form>
+      
         <nav class="navbar bg-faded navbar-fixed-top">
+        <% if @session.isLoggedIn :%>
+          <a class="navbar-brand" href="/user/message" >Chat Message</a>
+        <% else : %>
           <a class="navbar-brand" href="/" >Chat Message</a>
-
+        <% end%>
           <ul class="nav navbar-nav pull-xs-right" >
+
           <% if @session.isLoggedIn :%>
 
+          
            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a></li>
-            
+              <a class="nav-link" href="/logout">Logout <% @tilogin %></a></li>           
             <%else :%>
           
               <li class="nav-item active">
@@ -33,8 +37,17 @@
           </ul>
 
         </nav>
-    </form>
+   
+
         <% content %>
+        <%if @session.isLoggedIn :%>
+
+          <p style="text-align: center;"> da dang nhap thanh cong de hien thi tin nhan</p>
+          <!--<h2><% - @tilogin %></h2>-->
+
+        <%else :%>
+
+        <%end%>
 
     </body>
 </html>

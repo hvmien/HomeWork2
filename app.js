@@ -12,6 +12,7 @@ var middleware   = require('./middleware/index');
 
 
 
+
 mongoose.connect('mongodb://localhost', function(err){
 	if(err) throw err;
 	
@@ -26,9 +27,11 @@ mongoose.connect('mongodb://localhost', function(err){
 	app.engine('ect', ectRenderer.render);
 
 
-	app.use(express.static(__dirname + '/assets'));
+	app.use(express.static('assets'));
 
 	app.use(express.static(__dirname + '/app'));
+
+	
 
 	routes(app);
 
