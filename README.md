@@ -49,9 +49,11 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 
+##Invitation
+Em lam mot minh nen mong thay cham chuoc giup em a.
 
 ## Notes
-Em lam mot minh nen mong thay cham chuoc giup em a.
+
 Describe any challenges encountered while building the app.
 
 ## License
