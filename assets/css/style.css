@@ -39,7 +39,7 @@ margin-bottom: 10px;
 input {
 text-align: center;
 background-color: #ECF0F1;
-border: 2px solid transparent;
+border: 0px solid transparent;
 border-radius: 3px;
 font-size: 16px;
 font-weight: 200;
@@ -49,7 +49,7 @@ transition: border .5s;
 }
 
 input:focus {
-border: 2px solid #3498DB;
+border: 0 solid #3498DB;
 box-shadow: none;
 }
 
@@ -130,12 +130,11 @@ select {
   width: 100%;
   background-color: #e8eeef;
   color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 30px;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
+  width: 20px;
   margin: 0 4px 8px 0;
 }
 
@@ -654,7 +653,7 @@ ul {
   width: 60px;
 }
 .mailcheck {
-  width: 20px;
+  width: 10px;
 }
 .btnmove{
   width: 100px;
@@ -666,17 +665,25 @@ ul {
   text-align: left;
   
 }
-input[type="text1"] {
+
+
+input[type="text"], 
+input[type="password"],
+input[type="email"] :focus{
   background-color: white;
-  border: none;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  padding: 15px;
-  width: 100%;
-  margin-bottom: 30px;
-}
+  text-align: left;
+  outline: none;
+ }
+
 .newmess {
   height: 440px;
+}
+.allsort{
+  margin-left: 20px;
+}
+.bootstrap-tagsinput {
+    width: 100%;
+}
+.label {
+    line-height: 2 !important;
 }

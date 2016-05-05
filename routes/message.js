@@ -17,6 +17,10 @@ module.exports = function(app){
 		res.render('../app/views/message/mes.ect',{tilogin:req.session.user});
 	});
 
-
+	app.post('/user/message',function(req,res){
+		console.log('------' +req.param('emailto'));
+		console.log('------'+req.param('messcontent'));
+		res.redirect('/user/message');
+	});
 
 }

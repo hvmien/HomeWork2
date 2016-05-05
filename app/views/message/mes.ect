@@ -1,4 +1,25 @@
 <% extend '../app/views/layouts/main.ect' %>
+
+<script>
+$(document).ready(function () {
+    $('#bootstrapTagsInputForm')
+        .find('[name="emailto"]')
+            // Revalidate the cities field when it is changed
+            .change(function (e) {
+                $('#bootstrapTagsInputForm').formValidation('revalidateField', 'cities');
+            })
+            .end()
+        .find('[name="messcontent"]')
+            // Revalidate the countries field when it is changed
+            .change(function (e) {
+                $('#bootstrapTagsInputForm').formValidation('revalidateField', 'countries');
+            })
+            .end();
+        
+});
+</script>
+
+
 	<div class="container">
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
  <div class="mail-box">
@@ -31,29 +52,32 @@
 
                                       <!-- compost show-->
                                       <div class="modal-body">
-                                          <form class="form-horizontal newmess">
+                                          <form  class="form-horizontal newmess" method="post" action="/user/message">
                                               <div class="form-group">
 
                                                   <label class="col-lg-2" style="padding-top: 10px;">To</label>
                                                   <div class="col-lg-10">
-                                                      <input type="text1" placeholder="input email" class="inputnewmes">
+                                                      <input type="text" placeholder="Enter..." name="emailto" data-role="tagsinput">
                                                   </div>
                                               </div>
 
                                               <div class="form-group">
                                                   <label class="col-lg-2 ">Message</label>
                                                   <div class="col-lg-10">
-                                                      <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
+                                                      <textarea rows="10" cols="30" class="form-control" name="messcontent"></textarea>
                                                   </div>
                                               </div>
 
                                               <div class="form-group">
+
                                                   <div class="col-lg-offset-2 col-lg-10">
+                                                  
                                                       <span class="btn green fileinput-button">
                                                         <i class="fa fa-plus fa fa-white"></i>
                                                         <span>Attachment</span>
                                                         <input type="file" name="files[]" multiple="">
                                                       </span>
+                                                        
                                                       <button class="btn btn-send" type="submit">Send</button>
                                                   </div>
                                               </div>
@@ -74,9 +98,7 @@
                           <li>
                               <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
                           </li>
-                          <li>
-                              <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                          </li>    
+                           
                           <li>
                               <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
                           </li>
@@ -121,9 +143,9 @@
                                          <i class="fa fa-angle-down "></i>
                                      </a>
                                      <ul class="dropdown-menu">
-                                         <li><a href="#"> None</a></li>
-                                         <li><a href="#"> Read</a></li>
-                                         <li><a href="#"> Unread</a></li>
+                                         <li class="allsort"><a href="#"> None</a></li>
+                                         <li class="allsort"><a href="#"> Read</a></li>
+                                         <li class="allsort"><a href="#"> Unread</a></li>
                                      </ul>
                                  </div>
                              </div>
@@ -139,10 +161,10 @@
                                      <i class="fa fa-angle-down "></i>
                                  </a>
                                  <ul class="dropdown-menu">
-                                     <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
-                                     <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
                                      <li class="divider"></li>
-                                     <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                                  </ul>
                              </div>
 
@@ -152,10 +174,10 @@
                                      <i class="fa fa-angle-down "></i>
                                  </a>
                                  <ul class="dropdown-menu">
-                                     <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
-                                     <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
                                      <li class="divider"></li>
-                                     <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                     <li class="allsort"><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                                  </ul>
                              </div>
 
@@ -298,3 +320,4 @@
                   </aside>
               </div>
 </div>
+
