@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 mongoose.set('debug', true);
 
 var MessSchema = mongoose.Schema({
-  receicer: { type: String, last: String },
-  sender: { type: String, last: String },  
-  messcontent: { type: String, last: String},
-  salt: { type: String, required: true },
-  created:{type:Date, default:Date.now}
+  _id : Number, 
+  sender: { type: String, last: String },  //ng gui
+  receicer: { type: String, last: String },// ng nhan
+  messcontent: { type: String, last: String}, //noi dung
+  senttime:{type:Date, default:Date.now} // thoi gian gui
 });
 
 
