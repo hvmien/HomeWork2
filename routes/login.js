@@ -14,7 +14,6 @@ var ect = require('ect');
 module.exports = function(app){
 
 	middleware(app);
-	console.log('login routes');
 	app.get('/signup', function(req,res){
 		
 		res.render('../app/views/login/signup.ect');
@@ -63,10 +62,12 @@ module.exports = function(app){
 
 					console.log('4----');
 					//user created succesfully
-					req.session.isLoggedIn = true;
+
+					req.session.singed = true;
 					req.session.user = email;
 					console.log('created user:%s',email);
-					return res.redirect('/');
+					return res.render('../app/views/login/signup.ect',{invalidsign:true});
+					//return res.redirect('/');
 				})
 			})
 		})

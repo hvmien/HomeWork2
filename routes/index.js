@@ -22,7 +22,7 @@ module.exports = function(app){
 	//homepage
 
 	app.get('/', function(req, res) {
-		
+		console.log(req.session.singed);
 	  res.render('../app/views/index.ect', { title: 'WEB CHAT'});
 
 	});

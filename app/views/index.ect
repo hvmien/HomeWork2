@@ -1,6 +1,9 @@
 <% extend '../app/views/layouts/main.ect' %>
 <div>
 	<h1 style=" margin-top: 100px;"><%- @title %></h1>
-	
+	<%if @session.signed :%>
+          <p style="text-align: center;"> da dang ki thanh cong</p>
+        <%else :%>
+        <%end%>
 </div>
 
